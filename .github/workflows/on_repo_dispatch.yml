@@ -17,4 +17,5 @@ jobs:
         shell: bash
         working-directory: ./
         run: |
-          echo "get event: test-repo1-updated!"
+          echo "Event is '${{ github.event.action }}'" 
+          echo "Message is '${{ github.event.client_payload.message }}'"
