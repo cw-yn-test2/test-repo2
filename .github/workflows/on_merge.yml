@@ -13,15 +13,15 @@ on:
       - 'work/**'
 
 jobs:
-  goodbye:
-    name: Goodbye
+  close_the_door:
+    name: Close The Door
     if: ${{ github.event.pull_request.merged == true }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Close The Door
+      - name: echo Close The Door
         shell: bash
         working-directory: ./
         run: |

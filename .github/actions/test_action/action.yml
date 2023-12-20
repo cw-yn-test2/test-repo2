@@ -11,7 +11,7 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - name: Open The Door
+    - name: echo Open The Door
       shell: bash
       working-directory: ./
       run: |

@@ -11,8 +11,8 @@ env:
   MESSAGE: hijklmn
 
 jobs:
-  greeting:
-    name: Greeting
+  open_the_door:
+    name: Open The Door
     runs-on: ubuntu-latest
     environment:
       name: ${{ inputs.env_name }}
