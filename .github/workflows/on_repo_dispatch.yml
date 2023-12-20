@@ -1,0 +1,20 @@
+name: On Repository Dispatch
+
+on:
+  repository_dispatch:
+    types: 
+      - test-repo1-updated # repository_dispatch送出時のevent_typeの名前と揃える
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Echo Message
+        shell: bash
+        working-directory: ./
+        run: |
+          echo "get event: test-repo1-updated!"
