@@ -1,6 +1,9 @@
-name: On Repository Dispatch
+name: On Repository Dispatch2
 
 on:
+  push:
+    branches:
+      - feature/sasaki_test01
   repository_dispatch:
     types: 
       - test-sasaki # repository_dispatch送出時のevent_typeの名前と揃える
