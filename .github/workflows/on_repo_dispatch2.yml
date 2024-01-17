@@ -1,0 +1,21 @@
+name: On Repository Dispatch
+
+on:
+  repository_dispatch:
+    types: 
+      - test-sasaki # repository_dispatch送出時のevent_typeの名前と揃える
+
+jobs:
+  build:
+    name: Repository Dispatch
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Echo Message
+        shell: bash
+        working-directory: ./
+        run: |
+          echo "Event is '${{ github.event.action }}'" 
+          echo "Message is '${{ github.event.client_payload.customField }}'"
