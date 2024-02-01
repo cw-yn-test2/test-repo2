@@ -22,9 +22,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Echo Hello World
-        shell: bash
-        working-directory: ./
-        run: |
-          echo "SASAKI TEST. environment name: ${{ inputs.environmentName }}"
-          echo "${{ inputs.message }}"
+      - name: Test Action
+        uses: ./.github/actions/sasaki
+        with:
+          environmentName: ${{ env.environmentName }}
+          message: ${{ env.MESSAGE }}
